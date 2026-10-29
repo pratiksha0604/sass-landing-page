@@ -1,0 +1,13 @@
+{
+  "name": "sass-landing-page",
+  "version": "1.0.0",
+  "description": "Responsive landing page refactored using SASS",
+  "scripts": {
+    "sass": "sass scss/style.scss css/style.css",
+    "watch": "sass --watch scss/style.scss css/style.css"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}

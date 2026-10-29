@@ -1,0 +1,119 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-main;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $space-sm;
+}
+
+// ---------- Navbar ----------
+.navbar {
+  background: $dark-color;
+  padding: $space-sm 0;
+
+  .container {
+    @include flex-between;
+  }
+
+  .logo {
+    color: $white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  ul {
+    display: flex;
+    gap: $space-md;
+    list-style: none;
+
+    a {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  @include respond($bp-tablet) {
+    .container {
+      flex-direction: column;
+      gap: $space-sm;
+    }
+  }
+}
+
+// ---------- Hero ----------
+.hero {
+  background: $primary-color;
+  color: $white;
+  text-align: center;
+  padding: $space-xl 0;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: $space-sm;
+
+    @include respond($bp-mobile) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    margin-bottom: $space-md;
+  }
+
+  .btn {
+    @include button($secondary-color, $dark-color);
+  }
+}
+
+// ---------- Features ----------
+.features {
+  padding: $space-xl 0;
+  background: $light-color;
+
+  .cards {
+    display: flex;
+    gap: $space-md;
+
+    @include respond($bp-tablet) {
+      flex-direction: column;
+    }
+  }
+
+  .card {
+    flex: 1;
+    background: $white;
+    padding: $space-md;
+    border-radius: $radius;
+    text-align: center;
+
+    h3 {
+      color: $primary-color;
+      margin-bottom: $space-xs;
+    }
+  }
+}
+
+// ---------- Footer ----------
+.footer {
+  @include flex-center;
+  background: $dark-color;
+  color: $white;
+  padding: $space-md 0;
+}
